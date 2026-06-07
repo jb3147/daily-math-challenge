@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Math Challenge | Train Your Brain in Minutes a Day</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Daily Math Challenge helps you build a consistent math habit with daily streak tracking, instant feedback, and global leaderboards. Boost confidence, stay motivated, and track your progress in minutes a day.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --color-primary: #000000;
+      --color-secondary: #FFFFFF;
+      --color-accent: #4A90E2;
+    }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .font-display {
+      font-family: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-950 text-gray-100 antialiased">
+  <div class="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-black">
+    <!-- Header -->
+    <header class="sticky top-0 z-40 border-b border-gray-800/70 bg-gray-950/80 backdrop-blur-md">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <nav class="flex items-center justify-between py-4">
+          <div class="flex items-center justify-between w-full">
+            <!-- Logo -->
+            <a href="https://jb3147.github.io/daily-math-challenge" class="flex items-center gap-3">
+              <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 via-sky-500 to-indigo-500 shadow-[0_10px_40px_rgba(59,130,246,0.5)]">
+                <!-- Heroicon Rocket -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4.5 19.5L9 15m6-12s-3.75.75-6.75 3.75c-2.41 2.41-3.29 5.72-3.57 7.98-.08.67.47 1.21 1.14 1.14 2.26-.28 5.57-1.16 7.98-3.57C20.25 9.75 21 6 21 6m-4.5-1.5l3 3M9 15l2.25 2.25M4.5 19.5l2.25-2.25" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-display text-lg font-bold tracking-tight text-white">Daily Math Challenge</span>
+                <span class="text-xs font-light uppercase tracking-[0.2em] text-gray-400">Train Your Brain</span>
+              </div>
+            </a>
+
+            <!-- Back Link -->
+            <a href="https://jb3147.github.io/daily-math-challenge" class="relative inline-flex items-center gap-1 px-1 py-1 text-sm font-light text-gray-300 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950">
+              ← Back
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- Policy Hero / Intro -->
+      <section class="relative overflow-hidden">
+        <!-- Decorative shapes -->
+        <div class="pointer-events-none absolute inset-0 -z-10">
+          <div class="absolute -left-32 top-0 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl"></div>
+          <div class="absolute -right-24 top-40 h-80 w-80 rounded-full bg-indigo-500/20 blur-3xl"></div>
+          <div class="absolute bottom-0 left-1/3 h-40 w-40 -translate-x-1/2 rounded-full bg-sky-400/10 blur-2xl"></div>
+        </div>
+
+        <div class="mx-auto max-w-7xl px-4 pt-16 pb-16 sm:px-6 md:pt-20 md:pb-20 lg:px-8 lg:pt-24 lg:pb-24">
+          <div class="mx-auto max-w-3xl">
+            <span class="inline-flex items-center gap-2 rounded-full border border-blue-500/40 bg-blue-500/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-blue-300 shadow-[0_10px_40px_rgba(37,99,235,0.35)]">
+              <!-- Heroicon Shield Check -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-blue-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9 12.75 11.25 15 15 9.75" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12 3.75 4.5 6v6a9 9 0 0 0 7.5 8.75A9 9 0 0 0 19.5 12V6L12 3.75Z" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              Legal & Compliance
+            </span>
+            <h1 class="mt-6 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl lg:leading-[1.05]">
+              Privacy Policy
+            </h1>
+            <p class="mt-6 text-sm font-light leading-relaxed text-gray-300 md:text-base">
+              This Privacy Policy explains how Daily Math Challenge (“we”, “us”, or “our”) collects, uses, discloses, and safeguards your information when you use our website, applications, and related services (collectively, the “Service”). Please read this policy carefully. By accessing or using the Service, you agree to the collection and use of information in accordance with this Privacy Policy.
+            </p>
+            <p class="mt-4 text-xs font-light text-gray-400">
+              Last updated: <span class="font-medium text-gray-200">January 1, 2025</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Privacy Content -->
+      <section class="border-t border-gray-900/80 bg-gray-950/80 py-12 md:py-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-3xl space-y-10 text-sm text-gray-200 md:text-base">
+            <!-- 1. Introduction -->
+            <section>
+              <h2 class="font-display text-2xl font-semibold text-white sm:text-3xl">1. Introduction</h2>
+              <p class="mt-4 text-sm font-light leading-relaxed text-gray-300">
+                Daily Math Challenge provides tools and experiences designed to help you build a consistent math practice habit. In providing these services, we may collect certain information about you. This Privacy Policy describes the types of information we collect, how we use and protect that information, and the choices you have about your personal data.
+              </p>
+              <p class="mt-3 text-sm font-light leading-relaxed text-gray-300">
+                By accessing or using the Service, you confirm that you have read, understood, and agree to be bound by this Privacy Policy. If you do not agree with any part of this policy, you should discontinue use of the Service immediately.
+              </p>
+            </section>
+
+            <!-- 2. Information We Collect -->
+            <section>
+              <h2 class="font-display text-2xl font-semibold text-white sm:text-3xl">2. Information We Collect</h2>
+              <p class="mt-4 text-sm font-light leading-relaxed text-gray-300">
+                We collect information that you provide directly to us, information that is collected automatically when you use the Service, and information from third-party sources where applicable.
+              </p>
+
+              <div class="mt-4 space-y-4">
+                <div>
+                  <h3 class="font-display text-lg font-semibold text-white">2.1 Information you provide to us</h3>
+                  <p class="mt-2 text-sm font-light leading-relaxed text-gray-300">
+                    We may collect personal information that you voluntarily provide when you register for an account, use interactive features, communicate with us, or otherwise use the Service. This may include:
+                  </p>
+                  <ul class="mt-2 list-disc space-y-1 pl-5 text-sm font-light text-gray-300">
+                    <li>Name, email address, and account credentials</li>
+                    <li>Profile information such as display name or avatar</li>
+                    <li>Communication preferences and support inquiries</li>
+                    <li>Any other information you choose to provide when interacting with the Service</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 class="font-display text-lg font-semibold text-white">2.2 Information collected automatically</h3>
+                  <p class="mt-2 text-sm font-light leading-relaxed text-gray-300">
+                    When you access or use the Service, we may automatically collect certain information, including:
+                  </p>
+                  <ul class="mt-2 list-disc space-y-1 pl-5 text-sm font-light text-gray-300">
+                    <li>Device and usage information (such as IP address, browser type, operating system, and device identifiers)</li>
+                    <li>Log data (such as pages viewed, time spent, access times, and referring URLs)</li>
+                    <li>Interaction data (such as challenges started and completed, streak information, accuracy and speed metrics)</li>
+                    <li>Approximate location information derived from your IP address, where permitted by law</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 class="font-display text-lg font-semibold text-white">2.3 Cookies and similar technologies</h3>
+                  <p class="mt-2 text-sm font-light leading-relaxed text-gray-300">
+                    We may use cookies, web beacons, local storage, and similar tracking technologies to operate and improve the Service, remember your preferences, and measure engagement. You can typically configure your browser to refuse cookies or to indicate when a cookie is being sent, but some features of the Service may not function properly without them.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 class="font-display text-lg font-semibold text-white">2.4 Information from third parties</h3>
+                  <p class="mt-2 text-sm font-light leading-relaxed text-gray-300">
+                    Where permitted by law, we may receive information about you from third-party services, for example if you choose to sign in using a third-party authentication provider or interact with our content on social media platforms. The information we receive will depend on the privacy settings and policies of those third-party services.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- 3. How We Use Your Information -->
+            <section>
+              <h2 class="font-display text-2xl font-semibold text-white sm:text-3xl">3. How We Use Your Information</h2>
+              <p class="mt-4 text-sm font-light leading-relaxed text-gray-300">
+                We use the information we collect for various purposes related to operating, improving, and protecting the Service, including:
+              </p>
+              <ul class="mt-3 list-disc space-y-1 pl-5 text-sm font-light text-gray-300">
+                <li>Providing, maintaining, and improving the Service and its features</li>
+                <li>Creating and managing your account, including streaks, progress tracking, and leaderboards</li>
+                <li>Personalizing your experience, such as adjusting challenge difficulty based on performance</li>
+                <li>Communicating with you about updates, security alerts, and support messages</li>
+                <li>Analyzing usage trends and performance to help us understand how the Service is used</li>
+                <li>Preventing fraud, abuse, and other harmful activity, and enforcing our terms and policies</li>
+                <li>Complying with applicable legal obligations and responding to lawful requests</li>
+              </ul>
+            </section>
+
+            <!-- 4. How We Share Your Information -->
+            <section>
+              <h2 class="font-display text-2xl font-semibold text-white sm:text-3xl">4. How We Share Your Information</h2>
+              <p class="mt-4 text-sm font-light leading-relaxed text-gray-300">
+                We do not sell your personal information. We may share your information in the following limited circumstances:
+              </p>
+              <ul class="mt-3 list-disc space-y-1 pl-5 text-sm font-light text-gray-300">
+                <li>
+                  <span class="font-medium text-gray-100">Service providers:</span> With trusted third-party vendors, contractors, and service providers who perform services on our behalf, such as hosting, analytics, customer support, or email delivery. These parties are bound by confidentiality and only use your information as necessary to provide services to us.
+                </li>
+                <li>
+                  <span class="font-medium text-gray-100">Legal and safety:</span> When we believe disclosure is reasonably necessary to comply with any applicable law, regulation, legal process, or governmental request; to protect the rights, property, or safety of Daily Math Challenge, our users, or the public; or to detect, prevent, or otherwise address fraud, security, or technical issues.
+                </li>
+                <li>
+                  <span class="font-medium text-gray-100">Business transfers:</span> In connection with, or during negotiations of, any merger, sale of assets, financing, or acquisition of all or a portion of our business by another entity. In such cases, we will take reasonable steps to ensure the successor entity honors this Privacy Policy or provides comparable protection.
+                </li>
+                <li>
+                  <span class="font-medium text-gray-100">With your consent:</span> With your explicit permission or at your direction, such as when you choose to share certain activity or achievements with others.
+                </li>
+              </ul>
+            </section>
+
+            <!-- 5. Data Retention -->
+            <section>
+              <h2 class="font-display text-2xl font-semibold text-white sm:text-3xl">5. Data Retention</h2>
+              <p class="mt-4 text-sm font-light leading-relaxed text-gray-300">
+                We retain personal information for as long as reasonably necessary to fulfill the purposes outlined in this Privacy Policy, including providing the Service, complying with our legal obligations, resolving disputes, and enforcing our agreements. Retention periods may vary depending on the type of data and the context in which it was collected.
+              </p>
+              <p class="mt-3 text-sm font-light leading-relaxed text-gray-300">
+                When we no longer need to use your personal information and are not required to retain it, we will take reasonable steps to remove it from our systems or anonymize it so that it can no longer be associated with you.
+              </p>
+            </section>
+
+            <!-- 6. Data Security -->
+            <section>
+              <h2 class="font-display text-2xl font-semibold text-white sm:text-3xl">6. Data Security</h2>
+              <p class="mt-4 text-sm font-light leading-relaxed text-gray-300">
+                We use reasonable administrative, technical, and physical safeguards to protect your information against unauthorized access, loss, misuse, or alteration. However, no method of transmission over the internet or method of electronic storage is completely secure, and we cannot guarantee absolute security.
+              </p>
+              <p class="mt-3 text-sm font-light leading-relaxed text-gray-300">
+                You are responsible for maintaining the confidentiality of your account credentials and for restricting access to your devices. If you believe your account or information has been compromised, please contact us immediately using the contact details below.
+              </p>
+            </section>
+
+            <!-- 7. Your Rights and Choices -->
+            <section>
+              <h2 class="font-display text-2xl font-semibold text-white sm:text-3xl">7. Your Rights and Choices</h2>
+              <p class="mt-4 text-sm font-light leading-relaxed text-gray-300">
+                Depending on your jurisdiction, you may have certain rights with respect to your personal information, such as:
+              </p>
+              <ul class="mt-3 list-disc space-y-1 pl-5 text-sm font-light text-gray-300">
+                <li>The right to access and obtain a copy of your personal information</li>
+                <li>The right to request correction or update of inaccurate or incomplete information</li>
+                <li>The right to request deletion of your personal information, subject to legal exceptions</li>
+                <li>The right to object to or restrict certain processing activities</li>
+                <li>The right to withdraw consent where processing is based on your consent</li>
+              </ul>
+              <p class="mt-3 text-sm font-light leading-relaxed text-gray-300">
+                To exercise any applicable rights, please contact us using the contact information provided in the “Contact Information” section below. We may need to verify your identity before processing your request, and certain requests may be limited by applicable law.
+              </p>
+            </section>
+
+            <!-- 8. Children’s Privacy -->
+            <section>
+              <h2 class="font-display text-2xl font-semibold text-white sm:text-3xl">8. Children’s Privacy</h2>
+              <p class="mt-4 text-sm font-light leading-relaxed text-gray-300">
+                The Service is not intended for use by children under the age where parental consent is required under applicable data protection laws, and we do not knowingly collect personal information from such children without appropriate consent. If we become aware that we have collected personal information from a child in violation of applicable law, we will take reasonable steps to delete that information as soon as practicable.
+              </p>
+              <p class="mt-3 text-sm font-light leading-relaxed text-gray-300">
+                If you believe that we may have collected information from a child inappropriately, please contact us using the details below so that we can investigate and take appropriate action.
+              </p>
+            </section>
+
+            <!-- 9. International Data Transfers -->
+            <section>
+              <h2 class="font-display text-2xl font-semibold text-white sm:text-3xl">9. International Data Transfers</h2>
+              <p class="mt-4 text-sm font-light leading-relaxed text-gray-300">
+                Your information may be processed and stored in countries other than the country in which you are located, which may have data protection laws that differ from those in your jurisdiction. Where we transfer personal information across borders, we take appropriate safeguards to ensure that your information is protected in accordance with this Privacy Policy and applicable law.
+              </p>
+            </section>
+
+            <!-- 10. Changes to This Privacy Policy -->
+            <section>
+              <h2 class="font-display text-2xl font-semibold text-white sm:text-3xl">10. Changes to This Privacy Policy</h2>
+              <p class="mt-4 text-sm font-light leading-relaxed text-gray-300">
+                We may update this Privacy Policy from time to time to reflect changes in our practices, technologies, legal requirements, or for other operational reasons. When we make material changes, we will take reasonable steps to notify you, such as by posting an updated policy on the Service with a new “Last updated” date or by sending you a notice where required by law.
+              </p>
+              <p class="mt-3 text-sm font-light leading-relaxed text-gray-300">
+                Your continued use of the Service after any changes to this Privacy Policy become effective will signify your acceptance of the updated policy. We encourage you to review this page periodically for the latest information on our privacy practices.
+              </p>
+            </section>
+
+            <!-- 11. Contact Information -->
+            <section>
+              <h2 class="font-display text-2xl font-semibold text-white sm:text-3xl">11. Contact Information</h2>
+              <p class="mt-4 text-sm font-light leading-relaxed text-gray-300">
+                If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, you may contact us at:
+              </p>
+              <div class="mt-3 rounded-2xl border border-gray-800 bg-gray-900/70 p-4 text-sm font-light text-gray-200">
+                <p>Daily Math Challenge</p>
+                <p class="mt-1">
+                  Email:
+                  <a href="mailto:jb@john.com" class="text-blue-300 underline-offset-2 hover:text-blue-200 hover:underline">
+                    jb@john.com
+                  </a>
+                </p>
+                <p class="mt-1 text-xs text-gray-400">
+                  Please include sufficient detail in your message so that we can understand and respond to your request.
+                </p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-900 bg-gray-950 py-8">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col items-start justify-between gap-4 text-xs text-gray-400 md:flex-row md:items-center">
+          <div class="flex items-center gap-2">
+            <span class="font-display text-sm font-semibold text-white">Daily Math Challenge</span>
+            <span class="h-4 w-px bg-gray-700"></span>
+            <p class="text-[11px] font-light text-gray-400">
+              © 2025 Daily Math Challenge. All rights reserved.
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-4">
+            <p class="text-[11px] font-light text-gray-400">
+              Contact: <a href="mailto:jb@john.com" class="text-gray-200 underline-offset-2 hover:text-white hover:underline">jb@john.com</a>
+            </p>
+            <div class="flex items-center gap-3 text-gray-500">
+              <a href="#" aria-label="Visit Daily Math Challenge on Twitter" class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-900 text-gray-400 transition-all duration-300 ease-out hover:scale-105 hover:bg-gray-800 hover:text-white">
+                <i class="fa-brands fa-x-twitter text-xs"></i>
+              </a>
+              <a href="#" aria-label="Visit Daily Math Challenge on Instagram" class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-900 text-gray-400 transition-all duration-300 ease-out hover:scale-105 hover:bg-gray-800 hover:text-white">
+                <i class="fa-brands fa-instagram text-xs"></i>
+              </a>
+              <a href="#" aria-label="Visit Daily Math Challenge on LinkedIn" class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-900 text-gray-400 transition-all duration-300 ease-out hover:scale-105 hover:bg-gray-800 hover:text-white">
+                <i class="fa-brands fa-linkedin-in text-xs"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Required JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Smooth Scroll for Anchor Links (kept for consistency if anchors are added later)
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href !== '#' && href.length > 1) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
