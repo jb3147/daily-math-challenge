@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Math Challenge | Train Your Brain in Minutes a Day</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Daily Math Challenge helps you build a consistent math habit with daily streak tracking, instant feedback, and global leaderboards. Boost confidence, stay motivated, and track your progress in minutes a day.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --color-primary: #000000;
+      --color-secondary: #FFFFFF;
+      --color-accent: #4A90E2;
+    }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .font-display {
+      font-family: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-950 text-gray-100 antialiased">
+  <div class="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-black">
+    <!-- Header -->
+    <header class="sticky top-0 z-40 border-b border-gray-800/70 bg-gray-950/80 backdrop-blur-md">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <nav class="flex items-center justify-between py-4">
+          <!-- Logo -->
+          <a href="#top" class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 via-sky-500 to-indigo-500 shadow-[0_10px_40px_rgba(59,130,246,0.5)]">
+              <!-- Heroicon Rocket -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4.5 19.5L9 15m6-12s-3.75.75-6.75 3.75c-2.41 2.41-3.29 5.72-3.57 7.98-.08.67.47 1.21 1.14 1.14 2.26-.28 5.57-1.16 7.98-3.57C20.25 9.75 21 6 21 6m-4.5-1.5l3 3M9 15l2.25 2.25M4.5 19.5l2.25-2.25" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-display text-lg font-bold tracking-tight text-white">Daily Math Challenge</span>
+              <span class="text-xs font-light uppercase tracking-[0.2em] text-gray-400">Train Your Brain</span>
+            </div>
+          </a>
+
+          <!-- Desktop Nav -->
+          <div class="hidden items-center gap-8 text-sm font-light text-gray-300 md:flex">
+            <a href="#features" class="relative inline-flex items-center gap-1 px-1 py-1 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950">
+              Features
+            </a>
+            <a href="#benefits" class="relative inline-flex items-center gap-1 px-1 py-1 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950">
+              Benefits
+            </a>
+            <a href="#about" class="relative inline-flex items-center gap-1 px-1 py-1 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950">
+              About
+            </a>
+            <a href="#testimonials" class="relative inline-flex items-center gap-1 px-1 py-1 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950">
+              Testimonials
+            </a>
+            <a href="#faq" class="relative inline-flex items-center gap-1 px-1 py-1 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950">
+              FAQ
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button class="mobile-menu-button inline-flex items-center justify-center rounded-full border border-gray-700 bg-gray-900/80 p-2 text-gray-100 shadow-sm transition-all duration-300 ease-out hover:scale-105 hover:border-gray-500 hover:bg-gray-800 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950 md:hidden" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars text-lg"></i>
+          </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden pb-4">
+          <div class="space-y-1 border-t border-gray-800 pt-4 text-sm font-light text-gray-200">
+            <a href="#features" class="block rounded-full px-4 py-2 transition-all duration-300 ease-out hover:bg-gray-800/80 hover:text-white">Features</a>
+            <a href="#benefits" class="block rounded-full px-4 py-2 transition-all duration-300 ease-out hover:bg-gray-800/80 hover:text-white">Benefits</a>
+            <a href="#about" class="block rounded-full px-4 py-2 transition-all duration-300 ease-out hover:bg-gray-800/80 hover:text-white">About</a>
+            <a href="#testimonials" class="block rounded-full px-4 py-2 transition-all duration-300 ease-out hover:bg-gray-800/80 hover:text-white">Testimonials</a>
+            <a href="#faq" class="block rounded-full px-4 py-2 transition-all duration-300 ease-out hover:bg-gray-800/80 hover:text-white">FAQ</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- Hero Section -->
+      <section class="relative overflow-hidden">
+        <!-- Decorative shapes -->
+        <div class="pointer-events-none absolute inset-0 -z-10">
+          <div class="absolute -left-32 top-0 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl"></div>
+          <div class="absolute -right-24 top-40 h-80 w-80 rounded-full bg-indigo-500/20 blur-3xl"></div>
+          <div class="absolute bottom-0 left-1/3 h-40 w-40 -translate-x-1/2 rounded-full bg-sky-400/10 blur-2xl"></div>
+        </div>
+
+        <div class="mx-auto max-w-7xl px-4 pt-16 pb-20 sm:px-6 md:pt-20 md:pb-24 lg:flex lg:items-center lg:gap-16 lg:px-8 lg:pt-24 lg:pb-28">
+          <!-- Left: Content -->
+          <div class="relative z-10 mx-auto max-w-2xl text-center lg:mx-0 lg:flex-1 lg:text-left">
+            <span class="inline-flex items-center gap-2 rounded-full border border-blue-500/40 bg-blue-500/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-blue-300 shadow-[0_10px_40px_rgba(37,99,235,0.35)]">
+              <!-- Heroicon Sparkles -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-blue-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 3.75 13.09 7.41 16.75 8.5 13.09 9.59 12 13.25 10.91 9.59 7.25 8.5 10.91 7.41 12 3.75Z" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6 14.25 6.54 16.04 8.25 16.5 6.54 16.96 6 18.75 5.46 16.96 3.75 16.5 5.46 16.04 6 14.25Z" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M18 14.25 18.54 16.04 20.25 16.5 18.54 16.96 18 18.75 17.46 16.96 15.75 16.5 17.46 16.04 18 14.25Z" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              New: Turn 5 minutes into a sharper math brain
+            </span>
+
+            <h1 class="mt-6 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl lg:leading-[1.05]">
+              Daily Math Challenge
+              <span class="block bg-gradient-to-r from-blue-400 via-sky-400 to-indigo-400 bg-clip-text text-transparent">
+                Build a world-class math habit.
+              </span>
+            </h1>
+
+            <p class="mt-6 max-w-xl text-base font-light leading-relaxed text-gray-300 md:text-lg">
+              Level up your math skills in minutes a day with adaptive challenges, instant feedback, and competitive leaderboards. Track your streak, see your progress, and turn practice into a game you cannot put down.
+            </p>
+
+            <dl class="mt-8 grid grid-cols-3 gap-4 text-left text-xs font-light text-gray-300 sm:text-sm md:max-w-md">
+              <div class="rounded-2xl border border-gray-800 bg-gray-900/60 px-4 py-3 shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
+                <dt class="text-[10px] uppercase tracking-[0.18em] text-gray-400">Daily streaks</dt>
+                <dd class="mt-1 flex items-baseline gap-1 font-display text-lg font-bold text-white">
+                  32k
+                  <!-- Heroicon Arrow trending up -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M3.75 15.75 9 10.5l4.159 4.159a2.25 2.25 0 0 0 3.182 0L20.25 10.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M18 10.5h2.25V12.75" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </dd>
+              </div>
+              <div class="rounded-2xl border border-gray-800 bg-gray-900/60 px-4 py-3 shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
+                <dt class="text-[10px] uppercase tracking-[0.18em] text-gray-400">Avg. session</dt>
+                <dd class="mt-1 font-display text-lg font-bold text-white">5 min</dd>
+              </div>
+              <div class="rounded-2xl border border-gray-800 bg-gray-900/60 px-4 py-3 shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
+                <dt class="text-[10px] uppercase tracking-[0.18em] text-gray-400">Skill boost</dt>
+                <dd class="mt-1 font-display text-lg font-bold text-white">+38%</dd>
+              </div>
+            </dl>
+
+            <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-start">
+              <a href="https://john.com" class="inline-flex items-center justify-center rounded-full bg-[var(--color-accent)] px-8 py-3 text-sm font-medium text-white shadow-[0_10px_40px_rgba(59,130,246,0.55)] transition-all duration-300 ease-out hover:scale-105 hover:brightness-110 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950">
+                Start Today’s Challenge
+                <!-- Heroicon Arrow right -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4.5 12h15m0 0-6.75-6.75M19.5 12l-6.75 6.75" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <button class="inline-flex items-center justify-center rounded-full border border-gray-700 bg-gray-900/70 px-6 py-3 text-xs font-medium text-gray-200 shadow-[0_10px_40px_rgba(0,0,0,0.45)] transition-all duration-300 ease-out hover:scale-105 hover:border-gray-500 hover:bg-gray-800 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950">
+                <!-- Heroicon Shield Check -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M9 12.75 11.25 15 15 9.75" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M12 3.75 4.5 6v6a9 9 0 0 0 7.5 8.75A9 9 0 0 0 19.5 12V6L12 3.75Z" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                No ads. Cancel anytime.
+              </button>
+            </div>
+
+            <p class="mt-4 text-xs font-light text-gray-400">
+              Join thousands of learners completing over <span class="font-medium text-blue-300">1.2 million</span> challenges every month.
+            </p>
+          </div>
+
+          <!-- Right: Abstract "product" preview -->
+          <div class="mt-12 flex-1 lg:mt-0">
+            <div class="relative mx-auto max-w-xl">
+              <!-- Floating card background -->
+              <div class="absolute -left-10 -top-6 h-24 w-24 rounded-3xl border border-blue-500/30 bg-blue-500/10"></div>
+              <div class="absolute -right-6 bottom-10 h-24 w-24 rounded-3xl border border-sky-400/30 bg-sky-400/10"></div>
+
+              <div class="relative rounded-2xl bg-gradient-to-br from-gray-900 via-gray-900/90 to-gray-950 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.6)] ring-1 ring-gray-800/80">
+                <div class="flex items-center justify-between gap-4">
+                  <div>
+                    <p class="text-xs font-light uppercase tracking-[0.2em] text-gray-400">Today’s challenge</p>
+                    <h2 class="mt-1 font-display text-xl font-semibold text-white">Algebra Speed Round</h2>
+                    <p class="mt-2 text-xs font-light text-gray-300">
+                      Solve 10 problems in under <span class="font-medium text-blue-300">4 minutes</span> to extend your streak.
+                    </p>
+                  </div>
+                  <div class="flex flex-col items-end">
+                    <span class="text-[11px] font-light uppercase tracking-[0.2em] text-gray-400">Streak</span>
+                    <div class="mt-1 flex items-baseline gap-1">
+                      <!-- Heroicon Fire -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M16.5 9.75C15 7.5 15.75 4.5 15.75 4.5s-3 1.5-4.5 4.5C10.5 6 8.25 4.5 8.25 4.5S7.5 7.5 9 9.75 9.75 15 9.75 15h4.5s.75-3 2.25-5.25Z" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M9.75 15A3.75 3.75 0 0 0 16.5 15" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <span class="font-display text-2xl font-bold text-white">27</span>
+                      <span class="text-xs font-light text-gray-400">days</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Progress bars -->
+                <div class="mt-6 space-y-4">
+                  <div>
+                    <div class="flex items-center justify-between text-[11px] font-light text-gray-300">
+                      <span>Accuracy</span>
+                      <span class="font-medium text-emerald-300">92%</span>
+                    </div>
+                    <div class="mt-1.5 h-2 rounded-full bg-gray-800">
+                      <div class="h-2 w-[92%] rounded-full bg-gradient-to-r from-emerald-400 to-teal-400"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="flex items-center justify-between text-[11px] font-light text-gray-300">
+                      <span>Speed</span>
+                      <span class="font-medium text-blue-300">1.8s / Q</span>
+                    </div>
+                    <div class="mt-1.5 h-2 rounded-full bg-gray-800">
+                      <div class="h-2 w-[78%] rounded-full bg-gradient-to-r from-blue-400 to-indigo-400"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Leaderboard preview -->
+                <div class="mt-6 rounded-2xl border border-gray-800 bg-gray-900/80 px-4 py-3">
+                  <div class="flex items-center justify-between text-xs font-light text-gray-300">
+                    <span class="flex items-center gap-2">
+                      <!-- Heroicon Trophy -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M8.25 4.5h7.5M9 4.5V3.75A1.5 1.5 0 0 1 10.5 2.25h3A1.5 1.5 0 0 1 15 3.75V4.5M8.25 4.5v3.75A3.75 3.75 0 0 0 12 12h0a3.75 3.75 0 0 0 3.75-3.75V4.5M6 21.75h12M9.75 21.75v-3A3.75 3.75 0 0 1 13.5 15h-3A3.75 3.75 0 0 1 9.75 18.75v3Z" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M5.25 5.25H4.5A1.5 1.5 0 0 0 3 6.75v1.5A3.75 3.75 0 0 0 6.75 12" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M18.75 5.25h.75A1.5 1.5 0 0 1 21 6.75v1.5A3.75 3.75 0 0 1 17.25 12" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      Global leaderboard
+                    </span>
+                    <span class="text-[11px] text-blue-300">Top 3% this week</span>
+                  </div>
+                  <div class="mt-2 grid grid-cols-3 gap-2 text-[11px] font-light text-gray-200">
+                    <div class="rounded-xl bg-gray-900/90 px-3 py-2">
+                      <p class="truncate text-gray-400">#1 • @numbersmith</p>
+                      <p class="mt-1 font-medium text-white">145 pts</p>
+                    </div>
+                    <div class="rounded-xl bg-gray-900/90 px-3 py-2">
+                      <p class="truncate text-gray-400">#2 • @mathmind</p>
+                      <p class="mt-1 font-medium text-white">138 pts</p>
+                    </div>
+                    <div class="rounded-xl bg-blue-500/10 px-3 py-2 ring-1 ring-blue-500/40">
+                      <p class="truncate text-blue-200">#24 • You</p>
+                      <p class="mt-1 font-medium text-blue-100">112 pts</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bottom floating mini card -->
+              <div class="pointer-events-none absolute -bottom-8 left-6 w-56 rounded-2xl border border-gray-800 bg-gray-900/90 px-4 py-3 text-xs font-light text-gray-200 shadow-[0_10px_40px_rgba(0,0,0,0.6)] backdrop-blur">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] uppercase tracking-[0.2em] text-gray-400">Instant feedback</span>
+                  <!-- Heroicon Check Circle -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M9 12.75 11.25 15 15 9.75" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <p class="mt-1 text-[11px] text-gray-300">
+                  See where you hesitated, which steps you missed, and how to solve it faster next time.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="relative border-t border-gray-900/80 bg-gray-950/80 py-16 md:py-24">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-3xl text-center">
+            <h2 class="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              Turn practice into a daily ritual
+            </h2>
+            <p class="mt-4 text-sm font-light leading-relaxed text-gray-300 md:text-base">
+              We designed Daily Math Challenge around proven habit-forming mechanics: streaks, instant feedback, and friendly competition. Each feature keeps you coming back, so your skills compound over time.
+            </p>
+          </div>
+
+          <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Feature 1 -->
+            <article class="group flex flex-col rounded-2xl border border-gray-800 bg-gray-900/70 p-6 shadow-md shadow-black/40 transition-all duration-300 ease-out hover:scale-[1.02] hover:border-blue-500/60 hover:bg-gray-900 hover:shadow-xl hover:shadow-black/70">
+              <div class="flex items-center justify-between">
+                <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-500/15 text-blue-300 ring-1 ring-blue-500/40">
+                  <!-- Heroicon Calendar -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M6.75 3.75v3M17.25 3.75v3" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M4.5 9.75h15" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M6.75 5.25h10.5A2.25 2.25 0 0 1 19.5 7.5v10.5A2.25 2.25 0 0 1 17.25 20.25H6.75A2.25 2.25 0 0 1 4.5 18V7.5A2.25 2.25 0 0 1 6.75 5.25Z" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <span class="rounded-full bg-emerald-500/10 px-3 py-1 text-[11px] font-medium text-emerald-300 ring-1 ring-emerald-500/40">
+                  Habit-forming
+                </span>
+              </div>
+              <h3 class="mt-4 font-display text-xl font-semibold text-white">Daily Streak Tracking</h3>
+              <p class="mt-3 text-sm font-light leading-relaxed text-gray-300">
+                Never lose sight of your momentum. Every completed challenge adds to your streak, visualized in a clean, minimal timeline that makes progress impossible to ignore. Missed a day? Smart reminders nudge you back on track before your streak resets.
+              </p>
+              <ul class="mt-4 space-y-2 text-xs font-light text-gray-300">
+                <li class="flex items-start gap-2">
+                  <!-- Heroicon Check -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-4 w-4 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M9 12.75 11.25 15 15 9.75" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <span>Visual streak calendar that rewards consistency with subtle, satisfying animations.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-4 w-4 text-blue-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 6v6h4.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <span>Micro-sessions fit into any schedule—most learners maintain streaks under 7 minutes per day.</span>
+                </li>
+              </ul>
+            </article>
+
+            <!-- Feature 2 -->
+            <article class="group flex flex-col rounded-2xl border border-gray-800 bg-gray-900/70 p-6 shadow-md shadow-black/40 transition-all duration-300 ease-out hover:scale-[1.02] hover:border-blue-500/60 hover:bg-gray-900 hover:shadow-xl hover:shadow-black/70">
+              <div class="flex items-center justify-between">
+                <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-sky-500/15 text-sky-300 ring-1 ring-sky-500/40">
+                  <!-- Heroicon Bolt -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M13 3.75 6.75 12H12l-1 8.25L17.25 12H12l1-8.25Z" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <span class="rounded-full bg-sky-500/10 px-3 py-1 text-[11px] font-medium text-sky-300 ring-1 ring-sky-500/40">
+                  Real-time
+                </span>
+              </div>
+              <h3 class="mt-4 font-display text-xl font-semibold text-white">Instant Feedback Engine</h3>
+              <p class="mt-3 text-sm font-light leading-relaxed text-gray-300">
+                Get step-by-step explanations the moment you submit an answer. See exactly where you went wrong, what you did right, and how to shave seconds off your solution—all without waiting for a tutor or digging through a textbook.
+              </p>
+              <ul class="mt-4 space-y-2 text-xs font-light text-gray-300">
+                <li class="flex items-start gap-2">
+                  <!-- Heroicon Sparkles -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-4 w-4 text-blue-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 3.75 13.09 7.41 16.75 8.5 13.09 9.59 12 13.25 10.91 9.59 7.25 8.5 10.91 7.41 12 3.75Z" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M6 14.25 6.54 16.04 8.25 16.5 6.54 16.96 6 18.75 5.46 16.96 3.75 16.5 5.46 16.04 6 14.25Z" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M18 14.25 18.54 16.04 20.25 16.5 18.54 16.96 18 18.75 17.46 16.96 15.75 16.5 17.46 16.04 18 14.25Z" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <span>Color-coded hints show conceptual gaps versus simple calculation slips.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <!-- Heroicon Adjustments -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-4 w-4 text-indigo-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M10.5 6h9.75M3.75 6h3.75M7.5 18h12.75M3.75 18h3.75M10.5 12h9.75M3.75 12h6.75" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <span>Adaptive difficulty automatically adjusts based on your accuracy and speed over time.</span>
+                </li>
+              </ul>
+            </article>
+
+            <!-- Feature 3 -->
+            <article class="group flex flex-col rounded-2xl border border-gray-800 bg-gray-900/70 p-6 shadow-md shadow-black/40 transition-all duration-300 ease-out hover:scale-[1.02] hover:border-blue-500/60 hover:bg-gray-900 hover:shadow-xl hover:shadow-black/70">
+              <div class="flex items-center justify-between">
+                <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-purple-500/15 text-purple-200 ring-1 ring-purple-500/40">
+                  <!-- Heroicon Users -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M15.75 6.75a3 3 0 1 1 3 3" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M8.25 6.75a3 3 0 1 0-3 3" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M4.5 18.75A4.5 4.5 0 0 1 9 14.25h1.125a4.5 4.5 0 0 1 4.5 4.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M15.75 18.75A4.5 4.5 0 0 1 20.25 14.25h.375A2.25 2.25 0 0 1 22.875 16.5v.75A4.5 4.5 0 0 1 18.375 21.75h-.375" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M12 9.75A3.75 3.75 0 1 1 8.25 6 3.75 3.75 0 0 1 12 9.75Z" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <span class="rounded-full bg-purple-500/10 px-3 py-1 text-[11px] font-medium text-purple-200 ring-1 ring-purple-500/40">
+                  Competitive
+                </span>
+              </div>
+              <h3 class="mt-4 font-display text-xl font-semibold text-white">Dynamic Leaderboards</h3>
+              <p class="mt-3 text-sm font-light leading-relaxed text-gray-300">
+                Compete with friends, classmates, or the entire community on weekly and monthly leaderboards. See how you rank by streak length, accuracy, and speed—then chase your personal bests with every challenge.
+              </p>
+              <ul class="mt-4 space-y-2 text-xs font-light text-gray-300">
+                <li class="flex items-start gap-2">
+                  <!-- Heroicon Chart Bar -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-4 w-4 text-purple-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M3.75 21.75h16.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M6.75 17.25v-6.75M12 17.25v-10.5M17.25 17.25V9.75" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <span>Separate boards for casual learners, competitive students, and “insane streak” grinders.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <!-- Heroicon Bell Alert -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-4 w-4 text-pink-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M14.25 18.75a2.25 2.25 0 1 1-4.5 0" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M4.5 9.75A7.5 7.5 0 0 1 12 2.25a7.5 7.5 0 0 1 7.5 7.5c0 2.608.339 4.047 1.041 4.98.366.488.03 1.27-.57 1.27H4.029c-.6 0-.936-.782-.57-1.27C4.161 13.797 4.5 12.358 4.5 9.75Z" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <span>Optional weekly summaries to track your rank movement and highlight new personal records.</span>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Benefits Section -->
+      <section id="benefits" class="border-t border-gray-900/80 bg-gray-950 py-16 md:py-24">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
+            <div>
+              <h2 class="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                Why a daily challenge beats cramming
+              </h2>
+              <p class="mt-4 text-sm font-light leading-relaxed text-gray-300 md:text-base">
+                Short, focused practice is scientifically proven to create deeper understanding and longer-lasting recall. Daily Math Challenge translates this into a system that actually fits modern life—and gets you measurable results.
+              </p>
+
+              <div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <!-- Benefit 1 -->
+                <div class="rounded-2xl border border-gray-800 bg-gray-900/70 p-5 shadow-[0_10px_40px_rgba(0,0,0,0.45)]">
+                  <div class="flex items-center gap-3">
+                    <!-- Heroicon Academic Cap -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M12 3.75 1.5 9l10.5 5.25L22.5 9 12 3.75Z" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M4.5 10.5v4.875a2.25 2.25 0 0 0 1.352 2.07L12 21.75l6.148-4.305a2.25 2.25 0 0 0 1.352-2.07V10.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <h3 class="font-display text-lg font-semibold text-white">Build Confidence</h3>
+                  </div>
+                  <p class="mt-2 text-xs font-light leading-relaxed text-gray-300">
+                    Replace “I’m just not a math person” with daily wins. Our adaptive challenges start at your level and push you just enough, so you experience a steady stream of success instead of overwhelm.
+                  </p>
+                  <p class="mt-3 text-[11px] font-medium text-emerald-300">
+                    Learners report feeling <span class="font-semibold">2.4× more confident</span> solving new problems after 21 days.
+                  </p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="rounded-2xl border border-gray-800 bg-gray-900/70 p-5 shadow-[0_10px_40px_rgba(0,0,0,0.45)]">
+                  <div class="flex items-center gap-3">
+                    <!-- Heroicon Lightning Bolt -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M13 3.75 6.75 12H12l-1 8.25L17.25 12H12l1-8.25Z" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <h3 class="font-display text-lg font-semibold text-white">Stay Motivated</h3>
+                  </div>
+                  <p class="mt-2 text-xs font-light leading-relaxed text-gray-300">
+                    Gamified streaks, level-ups, and lightweight competition keep practice fun. Instead of dreading problem sets, you get a quick daily dopamine hit every time you clear a challenge.
+                  </p>
+                  <p class="mt-3 text-[11px] font-medium text-blue-300">
+                    <span class="font-semibold">71%</span> of daily users maintain their streak for at least 30 days.
+                  </p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="rounded-2xl border border-gray-800 bg-gray-900/70 p-5 shadow-[0_10px_40px_rgba(0,0,0,0.45)]">
+                  <div class="flex items-center gap-3">
+                    <!-- Heroicon Chart Pie -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-sky-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M12 3.75A8.25 8.25 0 1 0 20.25 12H12V3.75Z" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M12 3.75A8.25 8.25 0 0 1 20.25 12" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <h3 class="font-display text-lg font-semibold text-white">Track Progress</h3>
+                  </div>
+                  <p class="mt-2 text-xs font-light leading-relaxed text-gray-300">
+                    Visualize how your accuracy, speed, and difficulty level evolve week by week. Instead of guessing whether you are improving, you get a clear, data-driven picture of your growth.
+                  </p>
+                  <p class="mt-3 text-[11px] font-medium text-sky-300">
+                    See granular insights by topic, so you know exactly where to focus next.
+                  </p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="rounded-2xl border border-gray-800 bg-gray-900/70 p-5 shadow-[0_10px_40px_rgba(0,0,0,0.45)]">
+                  <div class="flex items-center gap-3">
+                    <!-- Heroicon Device Phone Mobile -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M9 3.75h6a1.5 1.5 0 0 1 1.5 1.5v13.5a1.5 1.5 0 0 1-1.5 1.5H9a1.5 1.5 0 0 1-1.5-1.5V5.25A1.5 1.5 0 0 1 9 3.75Z" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9.75 18.75h4.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <h3 class="font-display text-lg font-semibold text-white">Fits Any Routine</h3>
+                  </div>
+                  <p class="mt-2 text-xs font-light leading-relaxed text-gray-300">
+                    Mobile-first design and bite-sized challenges make it effortless to squeeze in practice between classes, meetings, or commutes—no cluttered UI or time-consuming setup.
+                  </p>
+                  <p class="mt-3 text-[11px] font-medium text-indigo-300">
+                    Most challenges are designed to be finished in <span class="font-semibold">3–7 minutes</span>.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right side CTA / Highlight -->
+            <div class="lg:pl-8">
+              <div class="relative overflow-hidden rounded-2xl border border-blue-500/30 bg-gradient-to-br from-gray-900 via-gray-900 to-gray-950 p-6 shadow-[0_10px_40px_rgba(30,64,175,0.7)]">
+                <div class="absolute -right-12 -top-10 h-40 w-40 rounded-full bg-blue-500/20 blur-3xl"></div>
+                <div class="absolute -left-16 bottom-0 h-40 w-40 rounded-full bg-sky-400/10 blur-3xl"></div>
+
+                <h3 class="font-display text-2xl font-semibold text-white">See measurable gains in 4 weeks.</h3>
+                <p class="mt-3 text-sm font-light leading-relaxed text-blue-100">
+                  Commit to a 28-day streak and track how your accuracy and speed improve with every single problem. You focus on solving—we handle the structure, pacing, and analytics.
+                </p>
+
+                <ul class="mt-5 space-y-3 text-xs font-light text-blue-50">
+                  <li class="flex items-start gap-2">
+                    <!-- Heroicon Check Circle -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-4 w-4 text-emerald-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M9 12.75 11.25 15 15 9.75" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Guided path from fundamentals to advanced topics, tailored to your current level.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <!-- Heroicon Clock -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-4 w-4 text-sky-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M12 6v6h4.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M21 12A9 9 0 1 1 3 12a9 9 0 0 1 18 0Z" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Smart notifications that align with your highest completion times of day.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <!-- Heroicon Shield Check -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-4 w-4 text-indigo-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M9 12.75 11.25 15 15 9.75" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M12 3.75 4.5 6v6a9 9 0 0 0 7.5 8.75A9 9 0 0 0 19.5 12V6L12 3.75Z" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Designed with a distraction-free dark interface to keep your focus locked on the problem.</span>
+                  </li>
+                </ul>
+
+                <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <a href="https://john.com" class="inline-flex items-center justify-center rounded-full bg-[var(--color-accent)] px-8 py-3 text-sm font-medium text-white shadow-[0_10px_40px_rgba(59,130,246,0.7)] transition-all duration-300 ease-out hover:scale-105 hover:brightness-110 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950">
+                    Begin Your 28-Day Run
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M4.5 12h15m0 0-6.75-6.75M19.5 12l-6.75 6.75" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                  <p class="text-[11px] font-light text-blue-100">
+                    No long-term contract. Try it for a month and keep your progress data even if you leave.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section with Background Image -->
+      <section class="relative border-t border-gray-900/80 py-16 md:py-24">
+        <div class="absolute inset-0">
+          <div class="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(10,10,10,0.92),rgba(10,10,10,0.96))]"></div>
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.35),transparent_55%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.25),transparent_55%)] mix-blend-screen"></div>
+          <div class="absolute inset-0 bg-black/55"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-black/65 via-black/55 to-black/65"></div>
+          <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1600&q=80'); mix-blend-overlay;"></div>
+        </div>
+
+        <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl">
+            <h2 class="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              Ready to solve today’s challenge?
+            </h2>
+            <p class="mt-4 text-sm font-light leading-relaxed text-gray-100 md:text-base">
+              In less time than it takes to scroll your feed, you can complete a focused math challenge, protect your streak, and get one step closer to exam-ready skills. Daily Math Challenge turns “someday” into a concrete, daily action.
+            </p>
+
+            <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <a href="https://john.com" class="inline-flex items-center justify-center rounded-full bg-[var(--color-accent)] px-8 py-3 text-sm font-medium text-white shadow-[0_10px_40px_rgba(37,99,235,0.9)] transition-all duration-300 ease-out hover:scale-105 hover:brightness-110 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950">
+                Start in Under 60 Seconds
+                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4.5 12h15m0 0-6.75-6.75M19.5 12l-6.75 6.75" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <p class="text-xs font-light text-gray-100">
+                No setup, no friction. Just open today’s challenge, solve, and watch your streak grow.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="border-t border-gray-900/80 bg-gray-950 py-16 md:py-24">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <h2 class="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                Trusted by learners who used to hate drills
+              </h2>
+              <p class="mt-3 max-w-xl text-sm font-light leading-relaxed text-gray-300 md:text-base">
+                From students tackling exams to professionals keeping their skills sharp, Daily Math Challenge fits into busy lives and delivers real outcomes.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-xs font-light text-emerald-100 shadow-[0_10px_40px_rgba(16,185,129,0.35)]">
+              <div class="flex items-center gap-2">
+                <!-- Heroicon Star -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-300" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M11.48 3.499a.75.75 0 0 1 1.04 0l2.507 2.507a.75.75 0 0 0 .53.22h3.548a.75.75 0 0 1 .53 1.28l-2.507 2.507a.75.75 0 0 0-.22.53v3.548a.75.75 0 0 1-1.28.53l-2.507-2.507a.75.75 0 0 0-.53-.22h-3.548a.75.75 0 0 1-.53-1.28l2.507-2.507a.75.75 0 0 0 .22-.53V4.249a.75.75 0 0 1 .22-.53Z" />
+                </svg>
+                Average rating: <span class="ml-1 font-semibold text-emerald-50">4.9 / 5.0</span>
+              </div>
+              <p class="mt-1 text-[11px]">Based on early access users completing at least 10 challenges.</p>
+            </div>
+          </div>
+
+          <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <!-- Testimonial 1 -->
+            <article class="flex h-full flex-col rounded-2xl border border-gray-800 bg-gray-900/70 p-6 text-sm font-light text-gray-200 shadow-md shadow-black/40 transition-all duration-300 ease-out hover:scale-[1.02] hover:border-blue-500/60 hover:bg-gray-900 hover:shadow-xl hover:shadow-black/70">
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="font-display text-base font-semibold text-white">Alex Ramirez</h3>
+                  <p class="mt-0.5 text-xs text-gray-400">High School Student</p>
+                </div>
+                <div class="flex items-center gap-0.5 text-amber-300">
+                  <i class="fa-solid fa-star text-xs"></i>
+                  <i class="fa-solid fa-star text-xs"></i>
+                  <i class="fa-solid fa-star text-xs"></i>
+                  <i class="fa-solid fa-star text-xs"></i>
+                  <i class="fa-solid fa-star text-xs"></i>
+                </div>
+              </div>
+              <p class="mt-3 text-xs leading-relaxed text-gray-300">
+                I used to cram before every math test and still felt lost. With the daily streaks, I actually look forward to my 5-minute challenge each night. My accuracy went from around 60% to consistently above 90%, and I walked into my last exam actually feeling calm.
+              </p>
+              <p class="mt-3 text-[11px] font-medium text-emerald-300">
+                “The instant feedback shows me exactly what I missed so I don’t repeat the same mistakes.”
+              </p>
+            </article>
+
+            <!-- Testimonial 2 -->
+            <article class="flex h-full flex-col rounded-2xl border border-gray-800 bg-gray-900/70 p-6 text-sm font-light text-gray-200 shadow-md shadow-black/40 transition-all duration-300 ease-out hover:scale-[1.02] hover:border-blue-500/60 hover:bg-gray-900 hover:shadow-xl hover:shadow-black/70">
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="font-display text-base font-semibold text-white">Priya Shah</h3>
+                  <p class="mt-0.5 text-xs text-gray-400">Data Analyst, Fintech</p>
+                </div>
+                <div class="flex items-center gap-0.5 text-amber-300">
+                  <i class="fa-solid fa-star text-xs"></i>
+                  <i class="fa-solid fa-star text-xs"></i>
+                  <i class="fa-solid fa-star text-xs"></i>
+                  <i class="fa-solid fa-star text-xs"></i>
+                  <i class="fa-solid fa-star text-xs"></i>
+                </div>
+              </div>
+              <p class="mt-3 text-xs leading-relaxed text-gray-300">
+                I wanted to keep my mental math sharp without dedicating hours to it. Daily Math Challenge slides perfectly into my commute. The leaderboards give me just enough competition to care, and the analytics let me see how much faster I’ve gotten over the last month.
+              </p>
+              <p class="mt-3 text-[11px] font-medium text-blue-300">
+                “It feels like a game, but the impact on my day-to-day work is very real.”
+              </p>
+            </article>
+
+            <!-- Testimonial 3 -->
+            <article class="flex h-full flex-col rounded-2xl border border-gray-800 bg-gray-900/70 p-6 text-sm font-light text-gray-200 shadow-md shadow-black/40 transition-all duration-300 ease-out hover:scale-[1.02] hover:border-blue-500/60 hover:bg-gray-900 hover:shadow-xl hover:shadow-black/70">
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="font-display text-base font-semibold text-white">Jordan Lee</h3>
+                  <p class="mt-0.5 text-xs text-gray-400">SAT Math Tutor</p>
+                </div>
+                <div class="flex items-center gap-0.5 text-amber-300">
+                  <i class="fa-solid fa-star text-xs"></i>
+                  <i class="fa-solid fa-star text-xs"></i>
+                  <i class="fa-solid fa-star text-xs"></i>
+                  <i class="fa-solid fa-star text-xs"></i>
+                  <i class="fa-solid fa-star text-xs"></i>
+                </div>
+              </div>
+              <p class="mt-3 text-xs leading-relaxed text-gray-300">
+                I now recommend Daily Math Challenge to all of my students. The instant feedback reduces the time we spend going over basic misconceptions, so our sessions can focus on strategy. One of my students went from barely finishing practice sections to having a full 5 minutes left.
+              </p>
+              <p class="mt-3 text-[11px] font-medium text-purple-300">
+                “It bridges the gap between tutoring sessions with meaningful, bite-sized practice.”
+              </p>
+            </article>
+
+            <!-- Testimonial 4 -->
+            <article class="flex h-full flex-col rounded-2xl border border-gray-800 bg-gray-900/70 p-6 text-sm font-light text-gray-200 shadow-md shadow-black/40 transition-all duration-300 ease-out hover:scale-[1.02] hover:border-blue-500/60 hover:bg-gray-900 hover:shadow-xl hover:shadow-black/70">
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="font-display text-base font-semibold text-white">Emily Chen</h3>
+                  <p class="mt-0.5 text-xs text-gray-400">Product Manager</p>
+                </div>
+                <div class="flex items-center gap-0.5 text-amber-300">
+                  <i class="fa-solid fa-star text-xs"></i>
+                  <i class="fa-solid fa-star text-xs"></i>
+                  <i class="fa-solid fa-star text-xs"></i>
+                  <i class="fa-solid fa-star text-xs"></i>
+                  <i class="fa-solid fa-star text-xs"></i>
+                </div>
+              </div>
+              <p class="mt-3 text-xs leading-relaxed text-gray-300">
+                I hadn’t done “real math” since college, but I wanted to challenge myself again. The UI is clean, the dark mode is easy on my eyes, and the progress charts are weirdly satisfying. I’m on a 54-day streak and hitting problems I never thought I’d be able to solve.
+              </p>
+              <p class="mt-3 text-[11px] font-medium text-emerald-300">
+                “The streak mechanic is simple but incredibly powerful. I refuse to break it now.”
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Us Section -->
+      <section id="about" class="border-t border-gray-900/80 bg-gray-950 py-16 md:py-24">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-start">
+            <div>
+              <h2 class="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                About Daily Math Challenge
+              </h2>
+              <p class="mt-4 text-sm font-light leading-relaxed text-gray-300 md:text-base">
+                Daily Math Challenge was born from a simple observation: the people who feel truly comfortable with math rarely rely on last-minute cramming—they built quiet, consistent habits over years. Our team of educators, engineers, and designers set out to compress that journey into a tool that fits the way people actually live today. We combined adaptive problem sets, real-time feedback, and a distraction-free dark interface to make high-quality practice accessible in five-minute bursts, not weekend marathons.
+              </p>
+              <p class="mt-4 text-sm font-light leading-relaxed text-gray-300 md:text-base">
+                Our mission is to turn “I’m not a math person” into a myth of the past. We believe that confidence comes from repeated, bite-sized wins, and that great learning tools should feel as polished as your favorite consumer apps. Every interaction, from the shape of our streak calendar to the animation of a completed challenge, is crafted to help you return tomorrow. At our core, we value clarity, focus, and genuine progress—and we build Daily Math Challenge to reflect those values in every pixel.
+              </p>
+            </div>
+
+            <div class="space-y-5">
+              <div class="rounded-2xl border border-gray-800 bg-gray-900/70 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.6)]">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-xs font-light uppercase tracking-[0.2em] text-gray-400">Built with modern AI</p>
+                    <h3 class="mt-1 font-display text-lg font-semibold text-white">Powered by Claude from Anthropic</h3>
+                  </div>
+                  <!-- Heroicon Cpu Chip -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M9 9.75h6v6H9v-6Z" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M9 2.25v2.25M15 2.25v2.25M9 19.5v2.25M15 19.5v2.25M4.5 9H2.25M4.5 15H2.25M21.75 9H19.5M21.75 15H19.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M7.5 4.5h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-9a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3Z" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <p class="mt-3 text-xs font-light leading-relaxed text-gray-300">
+                  Under the hood, Daily Math Challenge uses Claude (Anthropic) to generate clear, step-by-step explanations and smart hints that respect your time. The result is feedback that feels like a great tutor—always available, never impatient, and tuned to your level.
+                </p>
+              </div>
+
+              <div class="grid grid-cols-3 gap-4 text-xs font-light text-gray-300">
+                <div class="rounded-2xl border border-gray-800 bg-gray-900/80 p-4 text-center">
+                  <p class="text-[10px] uppercase tracking-[0.2em] text-gray-400">Challenges served</p>
+                  <p class="mt-2 font-display text-xl font-bold text-white">1M+</p>
+                </div>
+                <div class="rounded-2xl border border-gray-800 bg-gray-900/80 p-4 text-center">
+                  <p class="text-[10px] uppercase tracking-[0.2em] text-gray-400">Avg. streak</p>
+                  <p class="mt-2 font-display text-xl font-bold text-white">19 days</p>
+                </div>
+                <div class="rounded-2xl border border-gray-800 bg-gray-900/80 p-4 text-center">
+                  <p class="text-[10px] uppercase tracking-[0.2em] text-gray-400">Countries</p>
+                  <p class="mt-2 font-display text-xl font-bold text-white">40+</p>
+                </div>
+              </div>
+
+              <div class="rounded-2xl border border-gray-800 bg-gray-900/80 p-4 text-[11px] font-light text-gray-300">
+                <p>
+                  We are continuously refining Daily Math Challenge based on real user data and feedback. Every week brings tighter feedback loops, smoother experiences, and more engaging challenges—so the product gets better simply by you using it.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="border-t border-gray-900/80 bg-gray-950 py-16 md:py-24">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-3xl text-center">
+            <h2 class="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              Frequently Asked Questions
+            </h2>
+            <p class="mt-3 text-sm font-light leading-relaxed text-gray-300 md:text-base">
+              Everything you need to know about how Daily Math Challenge works, how much time it takes, and what you can expect from your first month.
+            </p>
+          </div>
+
+          <div class="mx-auto mt-10 max-w-3xl space-y-4">
+            <!-- FAQ 1 -->
+            <div class="faq-item rounded-2xl border border-gray-800 bg-gray-900/70 p-4 text-sm text-gray-200 shadow-md shadow-black/40 transition-all duration-300 ease-out hover:border-blue-500/60 hover:bg-gray-900">
+              <button class="faq-question flex w-full items-center justify-between gap-4 text-left text-sm font-medium text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950" aria-expanded="false">
+                <span>How much time do I need to invest each day?</span>
+                <span class="faq-icon flex h-7 w-7 items-center justify-center rounded-full bg-gray-800 text-gray-200 transition-transform duration-300">
+                  <!-- Heroicon Chevron Down -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M19.5 8.25 12 15.75 4.5 8.25" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-answer mt-3 hidden text-xs font-light leading-relaxed text-gray-300">
+                Most learners complete a daily challenge in <span class="font-medium text-blue-300">3–7 minutes</span>. That includes solving problems, reviewing instant feedback, and logging your streak. You can always take on additional challenges if you are in the zone, but the system is intentionally designed so that one focused session per day is enough to see progress over time.
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item rounded-2xl border border-gray-800 bg-gray-900/70 p-4 text-sm text-gray-200 shadow-md shadow-black/40 transition-all duration-300 ease-out hover:border-blue-500/60 hover:bg-gray-900">
+              <button class="faq-question flex w-full items-center justify-between gap-4 text-left text-sm font-medium text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950" aria-expanded="false">
+                <span>What level of math is Daily Math Challenge designed for?</span>
+                <span class="faq-icon flex h-7 w-7 items-center justify-center rounded-full bg-gray-800 text-gray-200 transition-transform duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M19.5 8.25 12 15.75 4.5 8.25" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-answer mt-3 hidden text-xs font-light leading-relaxed text-gray-300">
+                Daily Math Challenge covers a wide range of levels—starting from core arithmetic and pre-algebra, through algebra and geometry, and into exam-style problem solving. During onboarding, we calibrate your starting difficulty based on a short placement sequence, then adjust in real time using your accuracy and speed. That means both students brushing up on fundamentals and professionals revisiting math can use the same product, but see appropriately challenging problems.
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item rounded-2xl border border-gray-800 bg-gray-900/70 p-4 text-sm text-gray-200 shadow-md shadow-black/40 transition-all duration-300 ease-out hover:border-blue-500/60 hover:bg-gray-900">
+              <button class="faq-question flex w-full items-center justify-between gap-4 text-left text-sm font-medium text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950" aria-expanded="false">
+                <span>What makes Daily Math Challenge different from other math apps?</span>
+                <span class="faq-icon flex h-7 w-7 items-center justify-center rounded-full bg-gray-800 text-gray-200 transition-transform duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M19.5 8.25 12 15.75 4.5 8.25" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-answer mt-3 hidden text-xs font-light leading-relaxed text-gray-300">
+                Most math tools either overwhelm you with full-length courses or reduce practice to shallow multiple-choice drills. Daily Math Challenge focuses narrowly on one thing: creating a sustainable, high-quality daily habit. The interface is minimal and dark-mode first, the challenges are intentionally short, and the feedback—powered by Claude—is crafted to be as helpful as a human tutor. Combined with streak tracking and leaderboards, the experience feels more like a thoughtfully designed game than a workbook.
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item rounded-2xl border border-gray-800 bg-gray-900/70 p-4 text-sm text-gray-200 shadow-md shadow-black/40 transition-all duration-300 ease-out hover:border-blue-500/60 hover:bg-gray-900">
+              <button class="faq-question flex w-full items-center justify-between gap-4 text-left text-sm font-medium text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950" aria-expanded="false">
+                <span>Do I need to be online to use Daily Math Challenge?</span>
+                <span class="faq-icon flex h-7 w-7 items-center justify-center rounded-full bg-gray-800 text-gray-200 transition-transform duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M19.5 8.25 12 15.75 4.5 8.25" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-answer mt-3 hidden text-xs font-light leading-relaxed text-gray-300">
+                To deliver accurate streak tracking, real-time syncing, and AI-powered explanations, Daily Math Challenge is designed as an online experience. That said, sessions are highly data-efficient and optimized for mobile use, so you can comfortably complete your challenge on typical cellular connections. If you briefly lose connection mid-challenge, your progress is cached locally and synced the moment you are back online.
+              </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item rounded-2xl border border-gray-800 bg-gray-900/70 p-4 text-sm text-gray-200 shadow-md shadow-black/40 transition-all duration-300 ease-out hover:border-blue-500/60 hover:bg-gray-900">
+              <button class="faq-question flex w-full items-center justify-between gap-4 text-left text-sm font-medium text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950" aria-expanded="false">
+                <span>What happens if I miss a day and break my streak?</span>
+                <span class="faq-icon flex h-7 w-7 items-center justify-center rounded-full bg-gray-800 text-gray-200 transition-transform duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M19.5 8.25 12 15.75 4.5 8.25" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-answer mt-3 hidden text-xs font-light leading-relaxed text-gray-300">
+                Life happens, and we design with that in mind. If you miss a day, your current streak resets, but your historical best streak, accuracy trends, and topic mastery stay intact. We also provide gentle, optional reminders when you are close to breaking a streak, and recovery prompts that help you restart without guilt. The goal is long-term consistency, not perfection—so a single missed day will never erase your overall progress.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA Strip -->
+      <section class="border-t border-gray-900/80 bg-gradient-to-r from-gray-950 via-gray-900 to-gray-950 py-10 md:py-14">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col items-start justify-between gap-6 rounded-2xl border border-gray-800 bg-gray-950/80 px-6 py-6 shadow-[0_10px_40px_rgba(0,0,0,0.7)] md:flex-row md:items-center md:px-8">
+            <div>
+              <h2 class="font-display text-2xl font-semibold tracking-tight text-white">
+                Protect your next 7-day streak today.
+              </h2>
+              <p class="mt-2 text-xs font-light leading-relaxed text-gray-300 md:text-sm">
+                Open today’s Daily Math Challenge, complete a single focused session, and feel the difference tomorrow. No clutter, no busywork—just clean, modern practice designed for real life.
+              </p>
+            </div>
+            <a href="https://john.com" class="inline-flex items-center justify-center rounded-full bg-[var(--color-accent)] px-8 py-3 text-sm font-medium text-white shadow-[0_10px_40px_rgba(59,130,246,0.7)] transition-all duration-300 ease-out hover:scale-105 hover:brightness-110 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950">
+              Launch Daily Math Challenge
+              <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4.5 12h15m0 0-6.75-6.75M19.5 12l-6.75 6.75" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-900 bg-gray-950 py-8">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col items-start justify-between gap-4 text-xs text-gray-400 md:flex-row md:items-center">
+          <div class="flex items-center gap-2">
+            <span class="font-display text-sm font-semibold text-white">Daily Math Challenge</span>
+            <span class="h-4 w-px bg-gray-700"></span>
+            <p class="text-[11px] font-light text-gray-400">
+              © 2025 Daily Math Challenge. All rights reserved.
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-4">
+            <p class="text-[11px] font-light text-gray-400">
+              Contact: <a href="mailto:jb@john.com" class="text-gray-200 underline-offset-2 hover:text-white hover:underline">jb@john.com</a>
+            </p>
+            <div class="flex items-center gap-3 text-gray-500">
+              <a href="#" aria-label="Visit Daily Math Challenge on Twitter" class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-900 text-gray-400 transition-all duration-300 ease-out hover:scale-105 hover:bg-gray-800 hover:text-white">
+                <i class="fa-brands fa-x-twitter text-xs"></i>
+              </a>
+              <a href="#" aria-label="Visit Daily Math Challenge on Instagram" class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-900 text-gray-400 transition-all duration-300 ease-out hover:scale-105 hover:bg-gray-800 hover:text-white">
+                <i class="fa-brands fa-instagram text-xs"></i>
+              </a>
+              <a href="#" aria-label="Visit Daily Math Challenge on LinkedIn" class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gray-900 text-gray-400 transition-all duration-300 ease-out hover:scale-105 hover:bg-gray-800 hover:text-white">
+                <i class="fa-brands fa-linkedin-in text-xs"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Required JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile Menu Toggle
+      const mobileMenuButton = document.querySelector('.mobile-menu-button');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+          const icon = mobileMenuButton.querySelector('i');
+          if (icon) {
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+          }
+        });
+
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            const icon = mobileMenuButton.querySelector('i');
+            if (icon) {
+              icon.classList.remove('fa-times');
+              icon.classList.add('fa-bars');
+            }
+          });
+        });
+      }
+
+      // FAQ Accordion Toggle (if FAQ section exists)
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        if (question) {
+          question.addEventListener('click', () => {
+            const answer = item.querySelector('.faq-answer');
+            const isOpen = !answer.classList.contains('hidden');
+            
+            // Close all other FAQ items (optional - remove if you want multiple open)
+            faqItems.forEach(otherItem => {
+              if (otherItem !== item) {
+                otherItem.querySelector('.faq-answer')?.classList.add('hidden');
+                otherItem.querySelector('.faq-icon')?.classList.remove('rotate-180');
+              }
+            });
+            
+            // Toggle current item
+            answer?.classList.toggle('hidden');
+            item.querySelector('.faq-icon')?.classList.toggle('rotate-180');
+          });
+        }
+      });
+
+      // Smooth Scroll for Anchor Links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href !== '#' && href.length > 1) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
